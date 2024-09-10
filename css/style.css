@@ -1430,3 +1430,14 @@ footer .credits a {
   margin: 20px 0;
   font-size: 16px;
 }
+.disabled-btn {
+  background-color: #ccc; /* Light grey background color */
+  color: #666; /* Darker grey text color */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+  border: 1px solid #999; /* Light grey border */
+}
+
+.disabled-btn:hover {
+  background-color: #ccc; /* Keep the same background color on hover */
+  color: #666; /* Keep the same text color on hover */
+}
