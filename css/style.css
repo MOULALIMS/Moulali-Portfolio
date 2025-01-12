@@ -702,8 +702,10 @@ a:hover {
 ======================================*/
 
 .about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .about-mf .about-img {
@@ -711,11 +713,11 @@ a:hover {
 }
 
 .about-mf .about-img img {
-  margin-left: 10px;
+  margin-left: 1px;
 }
 
 .skill-mf span {
-  color: #4e4e4e;
+  color: #000000;
 }
 
 .skill-mf .progress {
