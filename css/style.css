@@ -800,12 +800,12 @@ a:hover {
 //--//-->   PORTFOLIO
 ======================================*/
 .work-box {
-  margin-bottom: 2rem; /* Reduced margin */
+  margin-bottom: 5rem; /* Reduced margin */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #fff;
   /* Optional: Set a fixed height for consistency */
-  height: 300px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
 }
 
 .work-img {
@@ -1179,7 +1179,8 @@ a:hover {
 ======================================*/
 
 .footer-paralax {
-  padding: 4rem 0 0 0;
+  padding: 5rem 0 0 0;
+
 }
 
 .contact-mf {
@@ -1194,7 +1195,7 @@ a:hover {
 footer {
   text-align: center;
   color: #fff;
-  padding-bottom: 4rem;
+  padding-bottom: 0rem;
 }
 
 footer .copyright {
