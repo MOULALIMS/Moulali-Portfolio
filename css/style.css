@@ -701,37 +701,47 @@ a:hover {
 //--//-->   ABOUT
 ======================================*/
 
-.about-mf .box-shadow-full {
-  padding-top: 2%;
-  padding-bottom: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
-}
+  .about-mf .box-shadow-full {
+    padding: 2%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
+  .about-mf .about-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #0078ff;
+    margin: auto;
+  }
 
-.about-mf .about-img img {
-  margin-left: 1px;
-}
+  .about-mf .about-info {
+    font-size: 1.2rem;
+    color: #000000;
+  }
 
-.skill-mf span {
-  color: #000000;
-}
+  .title-s {
+    font-weight: bold;
+    color: #0078ff;
+  }
 
-.skill-mf .progress {
-  background-color: #cde1f8;
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .4rem;
-}
+  .about-me .title-box-2 {
+    margin-bottom: 1.5rem;
+  }
 
-.skill-mf .progress .progress-bar {
-  height: .4rem;
-  background-color: #0078ff;
-}
+  .about-me .title-box-2 h5 {
+    font-weight: bold;
+    color: #0078ff;
+    text-transform: uppercase;
+  }
 
+  .about-me .lead {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #050505;
+    margin-bottom: 1rem;
+  }
 /*======================================
 //--//-->   SERVICES
 ======================================*/
