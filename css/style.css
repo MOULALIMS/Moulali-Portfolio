@@ -856,12 +856,14 @@ a:hover {
 //--//-->   PORTFOLIO
 ======================================*/
 .work-box {
-  margin-bottom: 5rem; /* Reduced margin */
+  margin-left: 5%;
+  margin-bottom: 10rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #fff;
-  /* Optional: Set a fixed height for consistency */
-  height: 400px; /* Adjust as needed */
+  border-radius: 20px;
+  height: 450px;
+  width: 95%;
 }
 
 .work-img {
@@ -873,8 +875,7 @@ a:hover {
 
 .work-img img {
   transition: all 1s;
-  /* Optional: Set a fixed height or width if needed */
-  height: 150px; /* Adjust as needed */
+  height: 200px; 
   object-fit: cover; /* Ensures image covers the container while preserving aspect ratio */
 }
 
