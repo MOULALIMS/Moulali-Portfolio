@@ -700,48 +700,206 @@ a:hover {
 /*======================================
 //--//-->   ABOUT
 ======================================*/
+.about-mf {
+  background: #f8fafc;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 
-  .about-mf .box-shadow-full {
-    padding: 2%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.about-card.about-horizontal {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,120,255,0.10), 0 1.5px 8px rgba(0,120,255,0.08);
+  padding: 2.5rem 4rem;
+  margin: 0 auto;
+  max-width: 1450px;
+  width: 100%;
+  height: 950px;
+  display: flex;
+  align-items: stretch;
+  transition: box-shadow 0.2s;
+}
 
-  .about-mf .about-img img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 5px solid #0078ff;
-    margin: auto;
-  }
+.about-card.about-horizontal:hover {
+  box-shadow: 0 20px 48px rgba(0,120,255,0.15), 0 4px 16px rgba(0,120,255,0.11);
+}
 
-  .about-mf .about-info {
-    font-size: 1.2rem;
-    color: #000000;
-  }
+.about-card .row {
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
 
-  .title-s {
-    font-weight: bold;
-    color: #0078ff;
-  }
+.about-profile {
+  border-right: 2px solid #e3e9f6;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 320px;
+  max-width: 370px;
+}
 
-  .about-me .title-box-2 {
-    margin-bottom: 1.5rem;
-  }
+.about-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .about-me .title-box-2 h5 {
-    font-weight: bold;
-    color: #0078ff;
-    text-transform: uppercase;
-  }
+.about-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #0078ff;
+  box-shadow: 0 2px 8px rgba(0,120,255,0.10);
+  background: #fff;
+}
 
-  .about-me .lead {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 1rem;
+.about-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 0.3rem;
+  margin-top: 1.1rem;
+}
+
+.about-tagline {
+  font-size: 1.01rem;
+  color: #0078ff;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.8rem;
+}
+
+.about-contact {
+  font-size: 1.03rem;
+  color: #555;
+  margin-top: 0.7rem;
+  word-break: break-all;
+}
+
+.about-contact a {
+  color: #0078ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.about-contact a:hover {
+  color: #005eea;
+}
+
+.about-icon {
+  color: #0078ff;
+  margin-right: 0.4em;
+  font-size: 1.12em;
+  vertical-align: middle;
+}
+
+.about-bio {
+  padding-left: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.about-title {
+  font-size: 1.4rem;
+  color: #0078ff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+}
+
+.about-highlight {
+  background: linear-gradient(90deg, #e3f1fc 60%, #cbeafe 100%);
+  border-radius: 0.7em;
+  font-size: 1.13rem;
+  color: #0078ff;
+  padding: 0.9em 1.4em;
+  font-weight: 500;
+  margin-bottom: 1.3em;
+  display: inline-block;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0,120,255,0.04);
+}
+
+.about-bio p {
+  color: #444;
+  font-size: 1.11rem;
+  margin-bottom: 1.3em;
+  line-height: 2;
+  letter-spacing: 0.01em;
+  max-width: 950px;
+}
+
+.about-strengths {
+  font-size: 1.09rem;
+  color: #333;
+  line-height: 1.8;
+}
+.about-strengths div {
+  margin-bottom: 1em;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+@media (max-width: 1399.98px) {
+  .about-card.about-horizontal {
+    max-width: 98vw;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
+  .about-profile {
+    padding-right: 1.2rem;
+  }
+  .about-bio {
+    padding-left: 1.2rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .about-card.about-horizontal {
+    flex-direction: column;
+    height: auto;
+    padding: 1.2rem 0.5rem;
+    min-height: 0;
+  }
+  .about-profile {
+    border-right: none;
+    border-bottom: 2px solid #e3e9f6;
+    padding-right: 0;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    height: auto;
+    max-width: 100%;
+  }
+  .about-bio {
+    padding-left: 0;
+    height: auto;
+  }
+  .about-img {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 767.98px) {
+  .about-card.about-horizontal {
+    padding: 0.7rem 0.2rem;
+  }
+  .about-img {
+    width: 60px;
+    height: 60px;
+  }
+  .about-highlight {
+    font-size: 0.95rem;
+    padding: 0.5em 0.8em;
+  }
+}
+
+
 /*======================================
 //--//-->   SKILLS
 ======================================*/
