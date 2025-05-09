@@ -1067,87 +1067,141 @@ a:hover {
 /*======================================
 //--//-->   BLOG
 ======================================*/
-/* Ensure the cards are the same size and adjust height */
-.card-blog {
+.certifications-grid {
+  margin-top: 2.5rem;
+}
+
+.cert-card-link {
+  display: flex;
+  flex: 1 1 100%;
+  text-decoration: none;
+  transition: transform 0.18s;
+}
+
+.cert-card-link:hover .cert-card,
+.cert-card-link:focus .cert-card {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 36px rgba(0,120,255,0.13), 0 2px 12px rgba(0,120,255,0.13);
+}
+
+.cert-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 350px; /* Adjust the height as needed */
-  border: 1px solid #ddd; /* Optional: Adds a border around the cards */
-  border-radius: 8px; /* Optional: Adds rounded corners */
+  height: 390px;
+  transition: box-shadow 0.22s, transform 0.22s;
+  width: 100%;
+  position: relative;
+}
+
+.cert-card-img {
+  height: 50%;
+  min-height: 160px;
+  background: linear-gradient(135deg, #f0f4fa 60%, #e3e9f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-.card-blog .card-img {
-  flex: 1;
-  overflow: hidden;
-  height: 180px; /* Adjust the height as needed */
-}
-
-.card-blog .card-img img {
+.cert-card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the area */
+  object-fit: cover;
+  border-bottom: 1px solid #f0f4fa;
+  transition: transform 0.4s;
 }
 
-.card-blog .card-body {
-  padding: 1rem;
+.cert-card-link:hover .cert-card-img img,
+.cert-card-link:focus .cert-card-img img {
+  transform: scale(1.07);
+}
+
+.cert-card-body {
+  padding: 1.2rem 1.1rem 1rem 1.1rem;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute space between elements */
-  flex: 1;
+  background: #fff;
 }
 
-.card-blog .card-title {
-  font-size: 1.2rem; /* Adjust font size as needed */
-  margin-top: .5rem; /* Reduce margin for tighter spacing */
+.cert-card-title {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 0.7rem;
 }
 
-.card-blog .card-description {
-  color: #4e4e4e;
-  margin-top: .5rem; /* Reduce margin for tighter spacing */
-}
-
-.card-blog .card-category-box {
-  position: absolute;
-  text-align: center;
-  top: -16px;
-  left: 15px;
-  right: 15px;
-  line-height: 25px;
+.cert-card-desc {
+  font-size: 0.97rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.card-blog .card-category {
-  display: inline-block;
-  color: #fff;
-  padding: 0 15px 5px;
-  background-color: #0078ff;
-  border-radius: 4px;
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .cert-card {
+    height: 370px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cert-card {
+    height: 340px;
+  }
+  .cert-card-body {
+    padding: 1rem 0.7rem 0.7rem 0.7rem;
+  }
+}
+.cert-card {
+  position: relative;
 }
 
-.card-blog .card-category .category {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: .7rem;
-  letter-spacing: .1px;
-  margin-bottom: 0;
+.cert-badge {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  padding: 0.38em 1.1em;
+  border-radius: 1em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: #e3f1fc;
+  color: #0078ff;
+  box-shadow: 0 2px 8px rgba(0,120,255,0.07);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.card-blog .post-author {
-  display: inline-block;
+/* Optional: Custom colors for each platform */
+.badge-microsoft {
+  background: #e6f0fa;
+  color: #2172e7;
+}
+.badge-nasscom {
+  background: #faf0e6;
+  color: #e44d26;
+}
+.badge-greatlearning {
+  background: #f0f7f9;
+  color: #0097a7;
+}
+.badge-hackerrank {
+  background: #e7fbee;
+  color: #159947;
+}
+.badge-trending {
+  background: #f3f4f6;
+  color: #7c3aed;
 }
 
-.card-blog .post-date {
-  color: #4e4e4e;
-  display: inline-block;
-  float: right;
-}
-
-/* Ensure each card in the row has equal width */
-.row .col-md-4 {
-  display: flex;
-  align-items: stretch; /* Ensure all columns stretch to the same height */
-}
 
 /*
 .card-blog .card-body {
