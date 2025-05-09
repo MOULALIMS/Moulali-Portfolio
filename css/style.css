@@ -855,65 +855,171 @@ a:hover {
 /*======================================
 //--//-->   PORTFOLIO
 ======================================*/
+.btn-attractive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.85em 2.1em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #0078ff 40%, #4f8cff 100%);
+  border: none;
+  border-radius: 2em;
+  box-shadow: 0 4px 16px rgba(0,120,255,0.08), 0 1.5px 8px rgba(0,120,255,0.13);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.18s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-attractive .arrow {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  margin-left: 0.2em;
+  stroke: #fff;
+}
+
+.btn-attractive:hover,
+.btn-attractive:focus {
+  background: linear-gradient(90deg, #408dd9 0%, #397dca 100%);
+  transform: translateY(-2px) scale(1.04);
+  color: white;
+}
+
+.btn-attractive:hover .arrow,
+.btn-attractive:focus .arrow {
+  transform: translateX(6px) scale(1.15);
+}
+
 .work-box {
-  margin-left: 5%;
-  margin-bottom: 10rem;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   background-color: #fff;
   border-radius: 20px;
-  height: 450px;
-  width: 95%;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 2.5rem; /* for badge space */
+}
+
+.work-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0,120,255,0.13);
 }
 
 .work-img {
-  display: flex; /* Use Flexbox to center the image */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  overflow: hidden;
+  background: linear-gradient(135deg, #f0f4fa 60%, #e3e9f6 100%);
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .work-img img {
-  transition: all 1s;
-  height: 200px; 
-  object-fit: cover; /* Ensures image covers the container while preserving aspect ratio */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
 }
 
-.work-box:hover img {
-  -webkit-transform: scale(1.1); /* Reduced scale */
-  transform: scale(1.1);
+.work-box:hover .work-img img {
+  transform: scale(1.07);
 }
 
 .work-content {
-  padding: 1.5rem 2% 1rem 3%; /* Reduced padding */
-}
-
-.work-content .w-more {
-  color: #4e4e4e;
-  font-size: .7rem; /* Reduced font size */
-}
-
-.work-content .w-more .w-ctegory {
-  color: #0078ff;
-}
-
-.work-content .w-like {
-  font-size: 2rem; /* Reduced font size */
-  color: #0078ff;
-  float: right;
-}
-
-.work-content .w-like a {
-  color: #0078ff;
-}
-
-.work-content .w-like .num-like {
-  font-size: .6rem; /* Reduced font size */
+  padding: 1.4rem 1.2rem 0.5rem 1.2rem;
+  flex: 1 1 auto;
+  background: #fff;
 }
 
 .w-title {
-  font-size: 1rem; /* Reduced font size */
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 0.7rem;
 }
+
+.w-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card badge/tag at bottom right */
+.project-badge {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  padding: 0.35em 1.1em;
+  border-radius: 1em;
+  font-size: 0.95rem;   
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: #e3f1fc;
+  color: #0078ff;
+  box-shadow: 0 2px 8px rgba(0,120,255,0.07);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.badge-web {
+  background: #f9ddfc;
+  color: #fd4cc2;
+}
+.badge-app {
+  background: #e3f1fc;
+  color: #0078ff;
+}
+.badge-mobile{
+  background: #fcf0dd;
+  color: #e88307;
+}
+.badge-web {
+  background: #f9ddfc;
+  color: #fd4cc2;
+}
+.badge-design {
+  background: #e4f0c5;
+  color: #566805;
+}
+.badge-ai {
+  background: #e6f9f0;
+  color: #10b981;
+}
+
+/* Space between cards */
+.row.justify-content-center > [class*='col-'] {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive: 2 columns on md, 1 on sm */
+@media (max-width: 991.98px) {
+  .work-box {
+    height: 420px;
+  }
+}
+@media (max-width: 767.98px) {
+  .work-box {
+    height: 400px;
+  }
+  .project-badge {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
 
 
 /*======================================
