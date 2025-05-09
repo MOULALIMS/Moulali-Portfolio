@@ -762,6 +762,51 @@
   </div>
 </section>
   
+<div id="form-success-message" class="alert alert-success" style="display:none;">
+  <span class="glyphicon glyphicon-ok"></span> Your message has been sent. Thank you!
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('form-success-message');
+  const dialog = document.getElementById('dialog'); // If you want to use the dialog instead
+  const dialogClose = document.getElementById('dialog-close');
+
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Netlify form submission via AJAX
+      const formData = new FormData(form);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        // Option 1: Show a toast message
+        successMsg.style.display = 'block';
+        form.style.display = 'none'; // Optional: hide the form
+        // Option 2: Show a dialog instead
+        // dialog.style.display = 'block';
+        form.reset();
+      })
+      .catch(() => {
+        alert("There was an error submitting the form. Please try again.");
+      });
+    });
+  }
+
+  // If using dialog
+  if(dialogClose) {
+    dialogClose.addEventListener('click', function () {
+      dialog.style.display = 'none';
+    });
+  }
+});
+</script>
 
  
 

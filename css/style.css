@@ -1851,39 +1851,15 @@ footer .credits a:hover {
 /*======================================
 //--//-->   DIALOG FOR MESSAGE
 ======================================*/
-
-.dialog-overlay {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.35);
-}
-.dialog-box {
-  background: #fff;
-  margin: 10% auto;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  border-radius: 1.1rem;
-  box-shadow: 0 8px 32px rgba(0,120,255,0.13);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  position: relative;
-}
-.dialog-close {
-  color: #aaa;
-  position: absolute;
-  top: 10px; right: 16px;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-.dialog-close:hover {
-  color: #0078ff;
-}
-.dialog-message {
-  margin: 1.1rem 0 0 0;
-  font-size: 1.08rem;
-  color: #0078ff;
+.alert-success {
+  background: #e6f9f0;
+  color: #10b981;
+  border-radius: 1em;
+  padding: 1em 2em;
   font-weight: 600;
+  margin-top: 1.3em;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.09);
+  text-align: center;
+  font-size: 1.1rem;
+  transition: opacity 0.4s;
 }
