@@ -688,38 +688,41 @@
                   </h5>
                 </div>
                 <div>
-                  <form id="contactForm" action="contact-form-handler.php" method="post" role="form" class="contactForm">
-                    <div id="errormessage" class="alert alert-danger" style="display: none;"></div>
+                  <!-- Contact Form Start -->
+                  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contactForm" class="contactForm">
+                    <!-- Netlify hidden input -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    <!-- Honeypot field (hidden from users) -->
+                    <p style="display:none">
+                      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
                     <div class="row">
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                           <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
-                          <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                           <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
-                          <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                           <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
-                          <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                           <textarea class="form-control" name="message" rows="5" required placeholder="Message"></textarea>
-                          <div class="validation"></div>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
                       </div>
                     </div>
-                  </form> 
+                  </form>
+                  <!-- Contact Form End -->
                 </div>
               </div>
               <div class="col-md-6">
@@ -771,47 +774,39 @@
 
   <!--/ Scripts /-->
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contactForm');
-  const dialog = document.getElementById('dialog');
-  const dialogClose = document.getElementById('dialog-close');
-  const dialogMessage = document.getElementById('dialog-message');
-  const errorDiv = document.getElementById('errormessage');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    errorDiv.style.display = 'none';
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(msg => {
-      if (msg.trim() === 'OK') {
-        dialogMessage.innerHTML = '<span class="glyphicon glyphicon-ok"></span> Your message has been sent. Thank you!';
-        dialog.style.display = 'block';
-        form.reset();
-      } else {
-        errorDiv.textContent = msg;
-        errorDiv.style.display = 'block';
-      }
-    })
-    .catch(() => {
-      errorDiv.textContent = 'An error occurred. Please try again.';
-      errorDiv.style.display = 'block';
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactForm');
+    const dialog = document.getElementById('dialog');
+    const dialogClose = document.getElementById('dialog-close');
+  
+    if(form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+      
+        // Submit the form data to Netlify using fetch
+        const formData = new FormData(form);
+        fetch("/", {
+          method: "POST",
+          body: formData
+        })
+        .then(() => {
+          dialog.style.display = 'block';
+          form.reset();
+        })
+        .catch(() => {
+          alert("There was an error submitting the form. Please try again.");
+        });
+      });
+    }
+  
+    if(dialogClose) {
+      dialogClose.addEventListener('click', function () {
+        dialog.style.display = 'none';
+      });
+    }
   });
-
-  dialogClose.addEventListener('click', function () {
-    dialog.style.display = 'none';
-  });
-});
 </script>
-
-
+ 
 
 <!--/ Section Contact-Footer End /-->
     <footer>
