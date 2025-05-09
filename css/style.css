@@ -437,6 +437,13 @@ a:hover {
   padding-bottom: 1.563rem;
 }
 
+.navbar-b .nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px; /* Add some space for underline */
+}
+
+
 .navbar-b.navbar-reduce {
   box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
 }
@@ -459,13 +466,22 @@ a:hover {
 .navbar-b.navbar-reduce .nav-link:before {
   content: '';
   position: absolute;
-  margin-left: 0px;
-  width: 0%;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   height: 2px;
-  transition: all 500ms ease;
+  width: 0;
+  background-color: currentColor; /* or #fff/#0078ff as needed */
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1.5;
 }
+
+.navbar-b.navbar-trans .nav-link:hover:before,
+.navbar-b.navbar-trans .nav-link.active:before,
+.navbar-b.navbar-reduce .nav-link:hover:before,
+.navbar-b.navbar-reduce .nav-link.active:before {
+  width: 100%;
+}
+
 
 .navbar-b.navbar-trans .nav-link:hover,
 .navbar-b.navbar-reduce .nav-link:hover {
@@ -474,19 +490,9 @@ a:hover {
 
 .navbar-b.navbar-trans .nav-link:hover:before,
 .navbar-b.navbar-reduce .nav-link:hover:before {
-  width: 35px;
+  width: 50px;
 }
 
-.navbar-b.navbar-trans .show > .nav-link:before,
-.navbar-b.navbar-trans .active > .nav-link:before,
-.navbar-b.navbar-trans .nav-link.show:before,
-.navbar-b.navbar-trans .nav-link.active:before,
-.navbar-b.navbar-reduce .show > .nav-link:before,
-.navbar-b.navbar-reduce .active > .nav-link:before,
-.navbar-b.navbar-reduce .nav-link.show:before,
-.navbar-b.navbar-reduce .nav-link.active:before {
-  width: 35px;
-}
 
 .navbar-b.navbar-trans .nav-link:before {
   background-color: #fff;
