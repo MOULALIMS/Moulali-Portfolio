@@ -1,37 +1,26 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize user input
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+    $name    = strip_tags(trim($_POST["name"]));
+    $email   = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $subject = strip_tags(trim($_POST["subject"]));
+    $message = trim($_POST["message"]);
 
-    // Set recipient email address
-    $to = 'moulali.saheb072@gmail.com'; // Replace with your email address
-
-    // Set email subject
-    $email_subject = "Contact Form Submission: $subject";
-
-    // Construct email body
-    $email_body = "You have received a new message from the user $name.\n\n";
-    $email_body .= "Here are the details:\n";
-    $email_body .= "Name: $name\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Subject: $subject\n";
-    $email_body .= "Message:\n$message\n";
-
-    // Set email headers
-    $headers = "From: $email\n";
-    $headers .= "Reply-To: $email\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\n"; // Ensure proper encoding
-
-    // Send email
-    if (mail($to, $email_subject, $email_body, $headers)) {
-        echo 'Message sent successfully!';
-    } else {
-        echo 'Failed to send message.';
+    if (empty($name) || empty($email) || empty($subject) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo "Please fill in all fields with a valid email.";
+        exit;
     }
-} else {
-    echo 'Invalid request.';
+
+    $to = "moulalisaheb21@gmail.com";
+    $email_subject = "Portfolio Contact: $subject";
+    $email_body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+    $headers = "From: $name <$email>";
+
+    if (mail($to, $email_subject, $email_body, $headers)) {
+        echo "OK";
+    } else {
+        http_response_code(500);
+        echo "Oops! Something went wrong and we couldn't send your message.";
+    }
 }
 ?>
