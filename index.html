@@ -762,50 +762,7 @@
   </div>
 </section>
   
-  <!--/ Dialog Box /-->
-  <div id="dialog" class="dialog-overlay">
-    <div class="dialog-box">
-      <span id="dialog-close" class="dialog-close">&times;</span>
-      <div id="dialog-message" class="dialog-message">
-        <span class="glyphicon glyphicon-ok"></span> Your message has been sent. Thank you!
-      </div>
-    </div>
-  </div>
 
-  <!--/ Scripts /-->
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactForm');
-    const dialog = document.getElementById('dialog');
-    const dialogClose = document.getElementById('dialog-close');
-  
-    if(form) {
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-      
-        // Submit the form data to Netlify using fetch
-        const formData = new FormData(form);
-        fetch("/", {
-          method: "POST",
-          body: formData
-        })
-        .then(() => {
-          dialog.style.display = 'block';
-          form.reset();
-        })
-        .catch(() => {
-          alert("There was an error submitting the form. Please try again.");
-        });
-      });
-    }
-  
-    if(dialogClose) {
-      dialogClose.addEventListener('click', function () {
-        dialog.style.display = 'none';
-      });
-    }
-  });
-</script>
  
 
 <!--/ Section Contact-Footer End /-->
