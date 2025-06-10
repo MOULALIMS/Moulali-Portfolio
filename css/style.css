@@ -1453,7 +1453,10 @@ a:hover {
   background: #f3f4f6;
   color: #7c3aed;
 }
-
+.badge-edubridge {
+  background: #f9dce5;
+  color: #f72c55;
+}
 
 /*
 .card-blog .card-body {
