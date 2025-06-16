@@ -905,6 +905,52 @@ a:hover {
   }
 }
 
+/* About For Mobile Device*/
+/* Fix card height and overflow on mobile */
+@media (max-width: 575.98px) {
+  .about-card.about-horizontal {
+    padding: 1rem 0.5rem;
+    height: auto;
+  }
+
+  .about-profile {
+    padding-bottom: 1.5rem;
+  }
+
+  .about-bio {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-name {
+    font-size: 1.1rem;
+  }
+
+  .about-highlight {
+    font-size: 0.9rem;
+  }
+
+  .about-contact {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .about-strengths {
+    font-size: 1rem;
+  }
+
+  .about-bio p {
+    font-size: 1rem;
+    padding: 0 0.2rem;
+  }
+}
+
+
 
 /*======================================
 //--//-->   SKILLS
