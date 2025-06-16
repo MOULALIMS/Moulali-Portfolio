@@ -945,6 +945,7 @@ a:hover {
   }
 
   .about-bio p {
+    text-align: center;
     font-size: 1rem;
     padding: 0 0.2rem;
     padding-left: 0.5rem;
