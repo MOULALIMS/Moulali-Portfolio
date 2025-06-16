@@ -14,6 +14,10 @@
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -93,7 +97,7 @@
   </div>
   
   <!-- Intro Section -->
-  <section id="about" class="about-mf sect-pt4 route">
+  <section id="about" class="about-mf sect-pt4 route" data-aos="fade-right">
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-xl-12">
@@ -144,7 +148,7 @@
 
 
   <!--/ Section Skills Star /-->
-  <section id="Skills" class="services-mf route">
+  <section id="Skills" class="services-mf route"  data-aos="fade-right">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -414,7 +418,7 @@
   
 
   <!--/ Section Portfolio Star /-->
-  <section id="Projects" class="portfolio-mf sect-pt4 route">
+  <section id="Projects" class="portfolio-mf sect-pt4 route" data-aos="fade-down">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -530,7 +534,7 @@
   
 
  <!--/ Section Certifications Star /-->
-<section id="certifications" class="blog-mf sect-pt4 route">
+<section id="certifications" class="blog-mf sect-pt4 route" data-aos="fade-left">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -871,6 +875,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,    // Animation duration (1s)
+    easing: 'ease-in-out',
+    once: true         // Animation only once
+  });
+</script>
+
 
 </body>
 </html>
