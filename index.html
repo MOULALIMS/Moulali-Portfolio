@@ -76,25 +76,36 @@
 
   <!--/ Intro Skew Star /-->
   <div id="home" class="intro route bg-image">
-    <video autoplay muted loop id="background-video">
-      <source src="videos/beach1.mp4" type="video/mp4">
-      <!-- Add fallback for other formats if needed -->
-      <!-- <source src="path/to/your-video.webm" type="video/webm"> -->
-      <!-- <source src="path/to/your-video.ogv" type="video/ogg"> -->
-      Your browser does not support the video tag.
-    </video>
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">I am Moulali Saheb</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Aspiring Salesforce Developer, Java Backend Developer</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+  <video autoplay muted loop id="background-video">
+    <source src="videos/beach1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay-itro"></div>
+  <div class="intro-content display-table">
+    <div class="table-cell">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Neon Video Container (Left Side) -->
+          <div class="col-lg-4 col-md-5">
+            <div class="neon-video-container">
+              <div class="neon-circle">
+                <video autoplay muted loop id="overlay-video" disablePictureInPicture>
+                  <source src="videos/hi-wave.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- Reflection Effect -->
+              <div class="reflection"></div>
+            </div>
+          </div>
+          <!-- Text Content (Right Side) -->
+          <div class="col-lg-8 col-md-7">
+            <h1 class="intro-title mb-4">I am Moulali Saheb</h1>
+            <p class="intro-subtitle"><span class="text-slider-items">Aspiring Salesforce Developer, Java Backend Developer</span><strong class="text-slider"></strong></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
   
   <!-- Intro Section -->
   <section id="about" class="about-mf sect-pt4 route" data-aos="fade-right" data-aos-delay="100">
@@ -888,7 +899,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 </script>
-
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const neonCircle = document.querySelector('.neon-circle');
+  
+  // Create power strike particles
+  function createParticles() {
+    for (let i = 0; i < 10; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('power-strike-particle');
+      
+      // Random position around the circle
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 120 + Math.random() * 30;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      
+      particle.style.left = `calc(50% + ${x}px)`;
+      particle.style.top = `calc(50% + ${y}px)`;
+      particle.style.animationDelay = `${Math.random() * 2}s`;
+      
+      neonCircle.appendChild(particle);
+    }
+  }
+  
+  createParticles();
+});
+</script>
 </body>
 </html>

@@ -1,13 +1,3 @@
-/*
-  Theme Name: DevFolio
-  Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
-/*======================================
-//--//-->   STYLES GENERALES
-======================================*/
 
 body {
   background-color: #f5f5f5;
@@ -214,19 +204,178 @@ a:hover {
   z-index: 2; /* Ensure content is above overlay */
 }
 
-/*------/ Box /------*/
-
-.box-pl2 {
-  padding-left: 2rem;
+/* Updated Video Container */
+.video-container {
+  position: relative;
+  width: 250px; /* Adjust size as needed */
+  height: 250px;
+  margin: 0 auto 20px;
+  border-radius: 50%; /* Makes it circular */
+  overflow: hidden;
+  z-index: 10;
 }
 
-.box-shadow-full {
-  padding: 3rem 1.25rem;
+/* Circular shining border effect */
+.shining-border {
   position: relative;
-  background-color: #fff;
-  margin-bottom: 3rem;
-  z-index: 2;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes video circular */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: borderGlow 3s infinite alternate;
+}
+
+/* Particle border container */
+.particle-border {
+  position: relative;
+}
+
+/* Particles canvas */
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* Enhanced glow animation */
+@keyframes borderGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                inset 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 
+                0 0 30px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(255, 165, 0, 0.6),
+                inset 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  
+  .intro-title {
+    text-align: center;
+  }
+  
+  .intro-subtitle {
+    text-align: center;
+  }
+}
+/* ===== NEON VIDEO CONTAINER ===== */
+.neon-video-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* ===== NEON CIRCLE (Glowing Border) ===== */
+.neon-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #0073e6,
+    0 0 40px #0073e6,
+    0 0 70px #0073e6;
+  animation: neon-pulse 2s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.neon-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 15px #fff,
+    0 0 30px #fff,
+    0 0 45px #00f7ff,
+    0 0 60px #00f7ff,
+    0 0 90px #00f7ff;
+}
+
+/* ===== NEON PULSE ANIMATION (Power Strikes) ===== */
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #0073e6,
+      0 0 40px #0073e6,
+      0 0 70px #0073e6;
+  }
+  100% {
+    box-shadow: 
+      0 0 15px #fff,
+      0 0 30px #fff,
+      0 0 45px #00f7ff,
+      0 0 60px #00f7ff,
+      0 0 90px #00f7ff;
+  }
+}
+
+/* ===== VIDEO INSIDE NEON CIRCLE ===== */
+.neon-circle video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ===== REFLECTION EFFECT (External Glow) ===== */
+.reflection {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 255, 255, 0.5) 0%, 
+    rgba(255, 255, 255, 0) 70%);
+  filter: blur(5px);
+  opacity: 0.7;
+  z-index: -1;
+  animation: reflection-flicker 3s infinite alternate;
+}
+
+@keyframes reflection-flicker {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  100% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* ===== POWER STRIKE PARTICLES (Optional) ===== */
+/* (Add this if you want floating particles) */
+.power-strike-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00f7ff;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
 }
 
 /*------/ Socials /------*/
