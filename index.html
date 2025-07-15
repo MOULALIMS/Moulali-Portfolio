@@ -930,5 +930,57 @@ document.addEventListener('DOMContentLoaded', function() {
   createParticles();
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitText = document.getElementById('submit-text');
+  const submitSpinner = document.getElementById('submit-spinner');
+  const successContainer = document.getElementById('form-success-container');
+
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    submitText.textContent = 'Sending...';
+    submitSpinner.style.display = 'inline-block';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '228204aa-0b46-4ba2-ab95-7e2b30d25566',
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message')
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        contactForm.reset();
+        successContainer.style.display = 'block';
+        setTimeout(() => {
+          successContainer.style.display = 'none';
+        }, 5000);
+      } else {
+        alert("Form submission failed: " + result.message);
+      }
+    } catch (error) {
+      alert("There was an error submitting the form.");
+    }
+
+    // ✅ Immediately reset the button after all processing
+    submitText.textContent = 'Send Message';
+    submitSpinner.style.display = 'none';
+    submitBtn.disabled = false;
+  });
+});
+</script>
 </body>
 </html>
