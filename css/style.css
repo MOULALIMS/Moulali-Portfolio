@@ -1596,29 +1596,25 @@ a:hover {
   pointer-events: none;
 }
 
-.badge-web {
-  background: #f9ddfc;
-  color: #fd4cc2;
+.badge-ai {
+  background: linear-gradient(135deg, #2af598, #009efd);
+  color: white;
 }
-.badge-app {
-  background: #e3f1fc;
-  color: #0078ff;
+.badge-web {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: white;
 }
 .badge-mobile {
-  background: #fcf0dd;
-  color: #e88307;
-}
-.badge-web {
-  background: #f9ddfc;
-  color: #fd4cc2;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #000;
 }
 .badge-design {
-  background: #e4f0c5;
-  color: #566805;
+  background: linear-gradient(135deg, #56ab2f, #b5f566);
+  color: rgb(10, 9, 9);
 }
-.badge-ai {
-  background: #e6f9f0;
-  color: #10b981;
+.badge-app {
+  background: linear-gradient(135deg, #00c6ff, #0078ff);
+  color: white;
 }
 
 /* Space between cards */
